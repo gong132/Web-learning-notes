@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var fn = function (){
+				console.log(arguments)	
+				//这里arguments.length = 3;
+				//具体内容为（value,index,[1，2，3]），这里有value
+			    //和index是因为every方法需要获取arr的值，用index索引
+			    //value存储
+			}
+			var arr = [1,2,3];
+//			var even = function (x) {//判断a是否为偶数的函数
+//				return x % 2 === 0; 
+////				console.log(x % 2 === 0);
+//			};
+			arr.every(fn)
+			
+		</script>
+	</body>
+</html>

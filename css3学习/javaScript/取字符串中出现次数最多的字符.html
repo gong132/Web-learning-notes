@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = 'aabbkbkjdddhhhhddss';
+			function maxChar(str){
+				var obj = {};
+				var len = str.length;
+				var compare = 1;
+				var value;
+				for (var i = 0; i < len; i ++){
+					if(!obj[str[i]]){
+						obj[str[i]] = 1;
+//						for(var j = 0;j < len; j ++){
+//							if(obj[str[j]] == obj[str[i]]){
+//								obj[str[i]] ++;
+//							}
+//						}
+					}
+					else{
+						obj[str[i]] ++;
+					}
+				}
+				console.log(obj)
+				for(key in obj){
+					if(obj[key] > compare){
+						compare = obj[key];
+						value = key;
+					}
+				}
+				console.log(value + compare)
+			}
+			maxChar(str);
+		</script>
+	</body>
+</html>

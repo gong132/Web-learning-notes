@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//逐个设置
+//				$("div").css("width","100px");
+//				$("div").css("height","100px");
+//				$("div").css("background-color","red");
+				//链式设置
+				//$("div").css("width","100px").css("height","100px").css("background-color","red");
+				//对象设置
+				$("div").css({
+					width:"100px",
+					height:"100px",
+					backgroundColor:"red"
+				})
+				//获取css样式
+				console.log($("div").css("width"))		
+			})
+		</script>
+		<title></title>
+	</head>
+	<body>
+		<div id="">
+			
+		</div>
+	</body>
+</html>

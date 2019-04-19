@@ -1,0 +1,53 @@
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			.father{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				
+			}
+			.son{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+//				$(".father").mousemove(function(){
+//					console.log("father移入")
+//				})
+//				$(".father").mouseout(function(){
+//					console.log("father移出")
+//				})
+//               上面的代码会在进入子元素后仍触发
+//				$(".father").mouseenter(function(){
+//					console.log("father移入")
+//				})
+//				$(".father").mouseleave(function(){
+//					console.log("father移出")
+//				})
+				//上面的代码只会在父元素里触发
+				$(".father").hover(function(){
+					console.log("father移入");
+				},function(){
+					console.log("father移出")
+				})
+				//上面的代码可以实现和第二种相同的效果，因为hover在jQuery里就是用enter封装的
+			})
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 Attr方法和RemoveAttr方法
+			 1 attr();可以传两个参数或一个参数
+			 传一个表示获取属性的值,如果获取的是多个类的值,那就只会获得第一个class的值
+			 传两个表示修改属性的值
+			 如果没有指定的属性,就添加上去
+			  */
+			 $(function(){
+			 	console.log($("span").attr("class"));
+			 	$("span").eq(1).attr("class","class4");//会将找到的所有属性节点的值全部修改
+//			 	$("span").removeAttr("class name");//会移除所有找到的 所有属性节点
+			 	$("span").attr('demo','gong')
+			 })
+		</script>
+	</head>
+	<body>
+		<span class="class1" name="gong"></span>
+		<span class="class2" name="gong"></span>
+	</body>
+</html>

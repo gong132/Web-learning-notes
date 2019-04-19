@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.css"/>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#ad{
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				display: none;
+			}
+			#ad>span{
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-color: white;
+				color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$("span").click(function(){
+					$("img").remove()
+				})
+				//动画遵从队列，前一个执行完才执行下一个
+				$("#ad").stop().slideDown(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000);
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="ad">
+			<img src="img/1.jpg"/>
+			<span class="fa fa-close fa-2x"></span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.box{
+				width: 320px;
+				height: 250px;
+				border: 1px solid black;
+				margin: 50px auto;
+			}
+			.nav>li{
+				background-color: orange;
+				width: 80px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				float: left;
+			}
+			.imgs>li>img{
+				width: 320px;
+				height: 210px;
+			}
+			.imgs>li{
+				display: none;
+			}
+			.imgs>.show{
+				display: block;
+			}
+			.nav>.current{
+				background-color: #CCCCCC;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				$(".nav>li").mouseenter(function(){
+					//修改选项卡颜色
+					$(".nav>.current").removeClass("current")
+					$(this).addClass("current")
+					//获取当前选项卡的索引
+					var index = $(this).index();
+					//根据索引找图片
+					var img = $(".imgs>li").eq(index)
+					//显示找到的图片
+					$(".imgs>.show").removeClass("show")
+					$(img).addClass("show")
+					
+				})
+				$(".nav>li").mouseleave(function(){
+					$(this).removeClass("current")
+					//获取当前选项卡的索引
+					var index = $(this).index();
+					//根据索引找图片
+					var img = $(".imgs>li").eq(index)
+					//隐藏当前图片
+					$(img).removeClass("show")
+				})
+				*/
+				//上面的 代码有bug，不过方便理解
+				//下面的代码可以消除上面的bug
+				$(".nav>li").mouseenter(function(){
+					//修改选项卡颜色
+					$(this).addClass("current");
+					//jquery提供了一个siblings方法用于选择初当前元素的所有兄弟元素
+					$(this).siblings().removeClass("current")
+					//获取当前选项卡的索引
+					var index = $(this).index();
+					//根据索引找图片
+					var img = $(".imgs>li").eq(index)
+					//显示找到的图片
+					$(img).addClass("show")
+					//隐藏其他的图片
+					$(img).siblings().removeClass("show")
+				})
+
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="nav">
+				<li class="current">海贼</li>
+				<li>刀剑</li>
+				<li>死神</li>
+				<li>火影</li>
+			</ul>
+			<ul class="imgs">
+				<li class="show"><img src="img/海贼.png"/></li>
+				<li><img src="img/刀剑.png"/></li>
+				<li><img src="img/死神.png"/></li>
+				<li><img src="img/火影.png"/></li>
+			</ul>
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			div{
+				width: 200px;
+				height: 150px;
+				background-color: yellow;
+				margin: 10px;
+			}
+			div img{
+				width: 100%;
+				height: auto;
+				position: relative;
+				z-index: 3;
+			}
+			#div3{
+				transition: transform 2s;/*实现2s内旋转完成*/
+			}
+			div#div3:hover {								
+				transform: rotate(30deg);
+				z-index: 2;
+			}
+			#div4{
+				transform: translate(50px,100px);
+			}
+			#div5{
+				margin: 150px;
+				transform: translate(300px,100px);
+				transform: scale(2,1.5);/*宽2倍,高1.5倍;*/
+			}			
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<img src="img/11-25-1.png"/>			
+		</div>
+		<div id="div3">			
+		</div>
+		<div id="div4">			
+			div4
+		</div>
+		<div id="div5">
+			
+		</div>
+	</body>
+</html>

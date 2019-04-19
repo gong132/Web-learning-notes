@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+			}
+			
+		</style>
+		
+		<script type="text/javascript">
+			/*
+			 * 下面三种方法都和原生的innerHTML、innerTEXT类似
+			 */
+			$(function(){
+				var btns = document.getElementsByTagName("button");
+				btns[0].onclick = function(){
+					$("div").html("<p>我是一个段落<span>我是一个span</span></p>")
+				}
+				btns[1].onclick = function(){
+					console.log($("div").html());//在控制台输出
+				}
+				btns[2].onclick = function(){
+					$("div").text("<p>我是一个段落<span>我是一个span</span></p>");
+				}
+				btns[4].onclick = function(){
+					$("input").val("请输入用户名")
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<button>设置html</button>
+		<button>获取html</button>
+		<button>设置text</button>
+		<button>获取text</button>
+		<button>设置value</button>
+		<button>获取value</button>
+		<div id="">
+			
+		</div>
+		<input type="" name="" id="" value="" />
+	</body>
+</html>

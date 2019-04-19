@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#span1{
+				background: linear-gradient(to right,red 30%,blue 30%,yellow 50%);
+			}
+				#line{
+				height: 100px;
+				width: 100px;
+				background:linear-gradient(red,blue);
+			}
+			#line2{
+				padding: 30px;
+				text-align: center;				
+				width: 200px;
+				background: linear-gradient(left,blue,yellow);/*/这一行不写也有相同的效果*/
+				background: linear-gradient(to right,red 10%,blue 40%, yellow 80%);
+			}
+			#line3{
+				padding: 40px 0;
+				text-align: center;
+				width: 100px;
+				background: linear-gradient(left top,red,blue);
+				background: linear-gradient(to right bottom,red,blue,green,yellow,pink);
+			}
+			#line4{
+				padding: 50px;
+				width: 100px;
+				text-align: center;
+				background:radial-gradient(red , green, blue);
+			}
+			#line5{
+				padding: 50px;
+				width: 100px;
+				background: radial-gradient(red 5%,green 25%,blue 80%);
+			}
+			#line6{
+				padding: 50px;
+				width: 100px;
+				background: radial-gradient(circle ,red,green,blue);				
+			}
+			#line7{
+				padding: 50px;
+				width: 100px;
+				background: radial-gradient(Ellipse,red,green,blue);
+			}
+			#div1{
+				width: 300px;
+				background-image: url(img/5.jpg);
+				background-repeat: no-repeat;
+				padding:15px;
+				background-size: 100% auto;
+				text-align: center;
+				
+			}
+			p#test{font-size: 18px;
+				color: cornflowerblue;
+				width: 10em;/*控制每行放几个字*/
+				word-wrap: break-word;/*控制强制换行*/
+			}
+		</style>
+	</head>
+	<body>
+		<span id="span1">
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+		</span>
+		<img src="img/3.png"  />
+		<div id="div1">		
+			<p id="test">			
+			缺月挂疏桐，漏断人初静。
+			谁见幽人独往来？缥缈孤鸿影。
+			惊起却回头，有恨无人省。
+			拣尽寒枝不肯栖，寂寞沙洲冷</p>
+		</div>
+		<div id="line">line</div>
+		<div id="line2">
+			line2
+		</div>
+		<div id="line3">
+			line3
+		</div>
+		<div id="">
+			<img src="img/11-24-1.png"/>
+		</div>
+		<div id="line4">		
+			line4
+		</div>
+		<div id="line5">
+			line5
+		</div>
+		<div id="line6">
+			line6
+		</div>
+		<div id="line7">
+			line7
+		</div>
+	</body>
+</html>

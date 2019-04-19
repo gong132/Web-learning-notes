@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				 *delay()用于动画之间的延迟 
+				 * */
+				$("button").eq(0).click(function(){
+					$("div").animate({
+						width:200
+					},1000).delay(1000).animate({
+						height:200
+					},1000).animate({
+						width:100
+					},1000).animate({
+						height:100
+					},1000)
+				})
+				$("button").eq(1).click(function(){
+					$("div").stop()//立即停止当前，执行下一个动画
+					//$("div").stop(false)//立即停止当前的，执行下一个
+					//$("div").stop(false,false)//同上
+					//$("div").stop(true)//停止所有动画
+					//$("div").stop(true,true)//立即执行完当前动画，然后停止接下来的动画
+					//$("div").stop(true,false)//停止所有动画
+					//$("div").stop(false,true)//立即执行完当前动画，并执行下面的动画
+					//总结：第一个参数是false就会执行下面的动画，第二个参数是true就会立即执行完当前动画；
+					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			shijian
+		</div>
+		<button>点击开始</button>
+		<button>点击停止</button>
+	</body>
+</html>

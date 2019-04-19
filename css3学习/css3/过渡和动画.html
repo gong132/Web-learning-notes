@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 150px;
+				background-color: red;
+				
+				margin: 20px;
+			}
+			#div1:hover{
+				transition: width 2s;
+				width:400px;
+			}
+			#div2:hover{
+				width: 200px;
+				height: 400px;
+				transform: rotate(360deg);
+				transition: width 4s, height 4s , transform 4s;
+				transition-delay: 2s;
+			}
+			#div3{
+				animation: myfirst 5s;
+				background: #0000FF;
+			}
+			@keyframes myfirst{
+				0%{background: blue;}
+				20%{background: yellow;}
+				50%{background: red;}
+				100%{background: green;}
+			}
+			#div4{
+				position: relative;
+				animation: myfirst2 5s linear 3s infinite;
+			}
+			@keyframes myfirst2{
+				0%{background: blue; left: 0px;top: 0px;}
+				20%{background: yellow;left: 200px;top: 0px;}
+				50%{background: red;left: 200px;top: 200px;}
+				70%{background: green;left: 0px;top: 200px;}
+				100%{background: #7FFF00;left: 0px;top: 0px;}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			div1
+		</div>
+		<div id="div2">
+			div2
+		</div>
+		<div id="div3">
+			div3
+		</div>
+		<div id="div4">
+			div4
+		</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 * 有两种添加事件的方法
+			 * 1.$().eventName(fn)
+			 * 优点是编码效率高，缺点是，有些js的事件没有封装
+			 * 2.$().on("eventZName",fn)
+			 * 优点是所有的js事件都可以使用，缺点是编码效率低
+			 * 
+			 * 每一种方法都可以添加多个事件，多个不同的 事件
+			 */
+			$(function(){
+				$("button").click(function(){
+					alert("eventName")
+				})
+				$("button").mouseenter(function(){
+					alert("mouseenter")
+				})
+				$("button").on("click",function(){
+					alert("on")
+				})
+				$("button").on("mouseleave",function(){
+					alert("leave")
+				})
+			})
+			
+		</script>
+	</head>
+	<body>
+		<button>按钮</button>
+	</body>
+</html>

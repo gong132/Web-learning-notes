@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">点击添加</button>
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+		<script type="text/javascript">
+			/*
+			 * 在内部插入，
+			 * append()
+			 * appendTo()
+			 * preappend()
+			 * preappendTo()
+			 * 在外部插入
+			 * after()
+			 * insertafter()
+			 * before()
+			 * insertbefore()
+			 */
+
+
+			$('button').click(function(){
+				var li = $("<li>新增的li</li>");
+//				$("ul").append(li)
+//				$(li).appendTo("ul")
+//				$("ul").prepend(li)
+
+				$("ul").after(li)
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<button>删除结点</button>
+		<div>我是div
+			<p>我是段落</p>
+		</div>
+		<script type="text/javascript">
+			/*
+			 * remove()
+			 * empty()
+			 * detach()
+			 */
+			$("button").click(function(){
+				//$("div").remove()//删除div结点
+				$("div").empty();//清空div，保留div结点
+				//detach()和remove()功能一样
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<button>点击替换</button>
+		<h1>我是一个标题</h1>
+		<h1>我是一个标题</h1>
+		<script type="text/javascript">
+			$("button").click(function(){
+				/*
+				 * replaceWith()
+				 * replaceAll()
+				 */
+				var h6 = $("<h6>我是标题6</h6>")
+//				$("h1").replaceWith(h6)
+				h6.replaceAll("h1")
+			})
+		</script>
+	</body>
+</html>

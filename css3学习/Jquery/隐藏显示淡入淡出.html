@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+//			toggle hide show的参数都可以选择性添加时间和回调函数
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("#p2").toggle(1000,function(){
+						$("#p1").toggle(1000);
+					});
+				});
+				
+				$("#btn2").click(function(){
+					//也都可以添加回调函数
+					//$("#div1").fadeIn(1000);//显示
+					//$("#div2").fadeOut(1000);//消失
+					//$("#div1").fadeToggle(1000);//消失/显示
+					$("#div2").fadeTo(1000,0.7);//使变淡,第二个值设的是变淡程度
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<button id="btn1">隐藏/显示</button>
+		<p id="p2">这是一个测试的段落</p>
+		<p id="p1" style="display: none;">这是另一个测试的 段落</p>
+		
+		<button id="btn2">点击测试淡出淡入</button>
+		<div id="div1" style="display: none;">
+			<img src="img/1.png"/>
+		</div>
+		<div id="div2">
+			<img src="img/1.png"/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				 * 自定义事件条件
+				 * 1.需要用on来添加事件，
+				 * 2.事件触发需要用trigger
+				 */
+				$(".son").on("myClick",function(){
+					alert("myClick");
+				})
+				$(".son").trigger("myClick")
+				
+			})
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.father{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			.son{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		<a href="http://www.baidu.com"><span>百度一下</span></a>
+		<form action="http://www.taobao.com" method="post">
+			<input type="text" />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

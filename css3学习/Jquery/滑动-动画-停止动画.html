@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript"src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#flip").click(function(){
+					//同样也有slideDown和slideUp/上滑和下滑
+
+					$("#panel").slideToggle(1000);
+				});
+				
+				$("#btn1").click(function(){
+					$("#panel").stop();
+				});
+				
+				$("#btn2").click(function(){
+					$("#animat").animate({
+						height:"500px",
+						opacity:0.5,
+						//height:'toggle'//还可以把值这样设,可真有趣
+					},1000);
+					$("#animat").animate({
+						height:'toggle'
+					},1000);
+				});
+			});
+			
+		</script>
+		<style type="text/css">
+			#flip,#panel{
+				padding:5px;
+				text-align:center;
+				background-color:#e5eecc;
+				border:solid 1px #c3c3c3;
+			}
+			#panel{
+				padding: 50px;
+				display: none;//如果设为隐藏,那么点击就先显示
+			}
+		</style>
+	</head>
+	
+	<body>
+		<button id="btn1">停止动画</button>
+		<div id="flip" style="cursor:pointer" >
+			点我产生效果
+		</div>
+		<div id="panel">
+			测试面板
+		</div>
+		<button id="btn2">动画</button>
+		<div id="animat">
+			<img src="img/12-1-1.png"/>
+		</div>
+	</body>
+</html>

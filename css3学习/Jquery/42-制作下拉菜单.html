@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.css"/>
+		<title></title>
+		<script type="text/javascript"src="js/jquery-3.3.1.min.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.nav{
+				width: 300px;
+				margin:50px auto
+			}
+			.nav>li{
+				border: 1px solid black;
+				line-height: 35px;
+				border-bottom: none;
+				text-indent: 2rem;
+				position: relative;
+			}
+			.nav>li:last-child{
+				border-bottom: 1px solid black;
+				border-bottom-right-radius: 10px;
+				border-bottom-left-radius: 10px;
+			}
+			.nav>li:first-child{
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;	
+			}
+			.nav>li>span{
+				display: inline-block;
+				position: absolute;	
+				right: 20px;
+				width: 32px;
+				height: 32px;
+				text-align: center;
+			}
+			
+			.sub{
+				background-color: mediumpurple;
+				display: none;
+			}
+			.sub>li{
+				border: 1px solid white;
+				line-height: 35px;
+			}
+			.sub>li:hover{
+				background-color: red;
+			}
+			.current>span{
+				transform: rotate(90deg);
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				//1.给一级菜单添加点击事件
+				$(".nav>li").click(function(){
+					//2.找到一级菜单下的二级菜单
+					var sub = $(this).children(".sub");
+					//3.点击让二级菜单滑下来
+					$(sub).slideDown(1000)
+					//4.找到非当前点击元素的其他元素
+					var otherSub = $(this).siblings().children(".sub");
+					//5.让其他的收起
+					$(otherSub).slideUp(1000)
+					//这里小图标是用伪类写的，在旋转时会有偏移，打不到想要的效果
+					//6.让小图标旋转
+					$(this).addClass("current")
+					//让其他未被点击的收起
+					$(this).siblings().removeClass("current")
+				})
+				
+
+			})
+		</script>
+	</head>
+	<body>
+		<ul class="nav">
+			<li>一级菜单 <span class="fa fa-angle-right fa-2x"></span>
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单<span class="fa fa-angle-right fa-2x"></span>
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单<span class="fa fa-angle-right fa-2x"></span>
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单<span class="fa fa-angle-right fa-2x"></span>
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单<span class="fa fa-angle-right fa-2x"></span>
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单<span class="fa fa-angle-right fa-2x"></span>
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单<span class="fa fa-angle-right fa-2x"></span>
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单<span class="fa fa-angle-right fa-2x"></span>
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

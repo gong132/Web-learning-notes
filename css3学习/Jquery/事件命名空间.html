@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				 * 
+				 * 1.需要用on来添加事件，
+				 * 2.命名空间添加用类型名打点加名称
+				 * eg:click.gf
+				 */
+				$(".son").on("click.gf",function(){ 
+					alert("son click1");
+				})
+				$(".father").on("click.gf",function(){
+					alert("father click1");
+				})
+				$(".father").on("click",function(){
+					alert("father click2");
+				})
+				//$(".son").trigger("click")//所有click类型的都会触发
+				$(".son").trigger("click.gf")//只有相同命名空间的father触发			
+			})
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.father{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			.son{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		<a href="http://www.baidu.com"><span>百度一下</span></a>
+		<form action="http://www.taobao.com" method="post">
+			<input type="text" />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

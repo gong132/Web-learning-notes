@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//prop和removeProp的方法特征和attr类似；
+				console.log($("span").prop("class"))
+				$("span").prop("class","class4")
+				$("span").prop("demo","gong")
+				$("span").removeProp("class name")//没有attr那也的效果
+//				console.log($("span").removeProp("demo"))
+			})
+		</script>
+	</head>
+	<body>
+		<span class="class1" name="gong"></span>
+		<span class="class2" name="gong"></span>
+	</body>
+</html>

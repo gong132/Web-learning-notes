@@ -1,0 +1,33 @@
+
+jQuery的静态方法:
+jQuery遍历数组和伪数组都可以用
+$.each(arr,function(index,value){//注意是索引做为第一个参数
+	console.log(index,value)
+})
+
+jQuery中的map也可以遍历数组
+$.map(arr,function(value,index){
+	console.log(value,index);
+})
+
+区别:1,map方法返回的是一个空数组,each返回的是遍历 的数组本身
+2,map方法可以在回调函数里对数组进行处理,生成一个新的数组,并且return,
+而each方法不支持这么做
+
+$.trim()
+作用:用来去除字符串前后的空格
+参数:带有空格的字符串
+返回值:去除空格后的字符串
+
+$.isWindow();
+判断传入的参数是不是window对象,返回true/false
+$.isArray()
+类似于上面,该方法判断伪数组时会返回false
+$.isFunction()
+判断是不是一个函数方法,jQuery本质上就是一个匿名函数,所以会返回true
+
+<script>
+	$.holdReady(true);//会暂停下面代码的执行,当传入的参数为false时,会重新开始加载
+	$(document).ready(function(){	
+	})
+</script>

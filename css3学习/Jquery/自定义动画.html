@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				margin-top: 20px;
+			}
+			.one{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			.two{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				//用animate自定义动画
+				//animate()可以接受四个参数，其中控制动画变化速度的参数一般不写 
+				$("button").eq(0).click(function(){
+					$(".one").animate({
+						width:200,
+						height:150
+					},1000,"linear",function(){
+						alert("动画结束")
+					})
+				})
+				$("button").eq(0).click(function(){
+					$(".two").animate({
+						marginLeft:100
+					},1000,function(){
+						alert("动画结束")
+					})
+				})
+				$("button").eq(1).click(function(){
+					$(".one").animate({
+						marginLeft:"+=100"
+					},1000,function(){
+						
+					})
+				})
+				$("button").eq(2).click(function(){
+					$(".one").animate({
+						//width:"hide"
+						width:"toggle"
+					},1000,function(){
+						
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button>操作属性</button>
+		<button>累加属性</button>
+		<button>关键字</button>
+		<div class="one"></div>
+		<div class="two"></div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<script type="text/javascript">
+			/*
+			 * 用off()方法删除事件
+			 */
+			$(function(){
+				function test1(){
+					alert("eventName")
+				}
+				$("button").click(test1)
+				
+				$("button").mouseenter(function(){
+					alert("mouseenter")
+				})
+				$("button").on("click",function(){
+					alert("on")
+				})
+				$("button").on("mouseleave",function(){
+					alert("leave")
+				})
+				//$("button").off();//不传参数会删除所有的事件
+//				$("button").off("click");//传一个参数删除指定类型的事件
+				$('button').off("click",test1)//传两个参数删除指定类型指定的指定事件
+			})
+		</script>
+	</head>
+	<body>
+		<button>按钮</button>
+	</body>
+</html>

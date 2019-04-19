@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript"src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.nav{
+				width: 300px;
+				height: 40px;
+				background-color: red;
+				margin: 50px auto;
+			}
+			.nav>li{
+				width: 100px;
+				line-height: 40px;
+				text-align: center;
+				float: left;
+			}
+			.sub{
+				background-color: blue;
+				display: none;
+			}
+			.sub>li{
+				line-height: 40px;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$(".nav>li").mouseenter(function(){
+					//找到二级菜单
+					var sub = $(this).children(".sub");
+					//在执行此次效果前，先把上次的停止
+					$(sub).stop()
+					$(sub).slideDown(300)
+				})
+				$(".nav>li").mouseleave(function(){
+					//找到二级菜单
+					var sub = $(this).children(".sub");
+					$(sub).stop()
+					
+					$(sub).slideUp(300)
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<ul class="nav">
+			<li>一级菜单
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul></li>
+			<li>一级菜单
+				<ul class="sub">
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+					<li>二级菜单</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-1.9.0.js"></script>
+		<title></title>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				 * 1.什么是事件冒泡
+				 * 2.怎样阻止事件冒泡
+				 * 3.什么是默认行为
+				 * 4.如何阻止默认行为
+				 */
+				$(".father").click(function(){
+					alert("father")
+				})
+				$(".son").click(function(e){
+					alert("son")
+//					return false;
+					e.stopPropagation();//点击事件传递一个参数，调用一个方法阻止冒泡行为
+				})
+				$('a').click(function(event){
+					//a标签的跳转就是默认行为，阻止的方式也是如下：
+					alert("delete")
+//					return false;
+					//该事件触发也会传入一个参数
+					event.preventDefault();//也可以阻止默认行为
+				})
+			})
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.father{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			.son{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		<a href="http://www.baidu.com">百度一下</a>
+		<form action="http://www.taobao.com" method="post">
+			<input type="text" />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

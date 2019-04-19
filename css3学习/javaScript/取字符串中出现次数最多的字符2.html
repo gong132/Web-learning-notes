@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = 'aabbkbkjdddhhhhddss';
+			function max(str){
+				var json = {};
+				for(var i = 0;i < str.length;i ++){
+					var k = str[i];
+					if(!json[k]){
+						json[k] = 1;
+					}
+					else{
+						json[k] ++;
+					}
+				}
+				var num = 0;
+				var value = null;
+				for(var k in json){
+					if(json[k] > num){
+						num = json[k];
+						value = k;		
+					}
+				}
+				console.log(value + num)
+				console.log(json)
+			}
+			max(str)
+		</script>
+	</body>
+</html>

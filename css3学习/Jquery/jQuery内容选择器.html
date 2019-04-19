@@ -1,0 +1,41 @@
+n<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			//:contains(Text)
+			//:has(selector)
+			//:parent
+			//:empty
+			$(function(){
+				var $div = $("div:empty");//找到既没有文本内容,也没有子元素的div
+				console.log($div);
+				var $div1 = $("div:parent");//找到有文本内容或者子元素的div
+				console.log($div1);
+				var $div2 = $("div:contains('我是谁')");//找到包含指定文本内容的div
+				console.log($div2);
+				var $div3 = $("div:has(span)");//找到包含指定子元素的div
+				console.log($div3);
+			})
+		</script>
+		<style type="text/css">
+			div{
+				width:100px;
+				height:80px;
+				background-color:red;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div>我是谁</div>
+		<div id="">
+			我是子元素
+		</div>
+		<div ><p>p</p></div>
+		<div><span id="">span</span></div>
+	</body>
+</html>

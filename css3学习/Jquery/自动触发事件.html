@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				 * trigger()
+				 * triggerHandler()
+				 */
+				$(".father").click(function(){
+					alert("father")
+				})
+				$(".son").click(function(e){
+					alert("son")					
+				})
+				$('a').click(function(event){
+					alert("delete")	
+				})
+				$("a").trigger("click")//不会触发冒泡
+				$("span").trigger()
+				//$(".son").trigger("click")//会触发冒泡
+				//$(".son").triggerHandler("click");//不会触发冒泡
+				//$(".father").trigger("click")//刷新页面会自动触发点击事件
+			})
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.father{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			.son{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		<a href="http://www.baidu.com"><span>百度一下</span></a>
+		<form action="http://www.taobao.com" method="post">
+			<input type="text" />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

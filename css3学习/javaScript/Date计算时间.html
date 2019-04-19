@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				color: red;
+				font-weight: bold;
+				font-size: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			setInterval(function() {
+				var now = new Date()
+				var newYear = new Date()
+				newYear.setMonth(1, 5); //设置月，日
+				//			newYear.setDate(5)
+				newYear.setHours(0,0,0)
+				if(now.getTime() < newYear.getTime()) {
+					differenceM = newYear.getTime() - now.getTime();
+					difference = Math.floor(differenceM / (1000 * 60 * 60 * 24));
+					differenceHours = differenceM % (1000 * 60 * 60 * 24);
+					//反复用取余和向下取整的方法来获取想要的时间
+					differenceHours2 = differenceHours % (1000*60*60)
+					differenceHours = Math.floor(differenceHours / (1000 * 60 * 60));
+					differenceMinutes = Math.floor(differenceHours2/(1000*60))
+					differenceMinutes2 = differenceHours2 % (1000*60)
+					differenceSeconds = Math.floor(differenceMinutes2/1000) 
+					document.body.innerHTML= "距离过年只有" + difference 
+					+ "天" + differenceHours + "小时" + differenceMinutes+"分钟"
+					+differenceSeconds + "秒";
+				}
+			}, 1000)
+		</script>
+	</body>
+
+</html>

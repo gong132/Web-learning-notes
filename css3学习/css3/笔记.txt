@@ -1,0 +1,10 @@
+<div>内如果有子元素设为flow,且其溢出父元素,
+可以通过给父元素设置overflow:auto;来解决溢出问题
+
+padding:20px;可以实现垂直方向居中
+text-align:center;//可以实现水平居中
+
+设置渐变颜色-语法:background: linear-gradient(direction, color-stop1, color-stop2, ...);
+设置径向渐变的语法background: radial-gradient(center, shape size, start-color, ..., last-color);
+
+在div里 放图片时,将图片的宽和高分别设为(width:100% height:auto 这样的话图片就会只在div里填充而不会溢出)

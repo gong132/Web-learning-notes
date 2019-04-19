@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				 * 
+				 */
+//				$("ul>li").on("click",function(){
+//					console.log($(this).html())
+//				})
+//				$("button").click(function(){
+//					$("ul").append("<li>我是新增的li</li>")
+//				})
+				//上面的代码不会在新增的li上执行点击事件，因为js代码执行是在html加载完之后，而js只获得了页面中的3个li。
+				//要想新增的li也可已有点击效果，可以利用事件委托
+				$("ul").delegate("li","click",function(){//delegate:代表
+					console.log($(this).html())
+				})
+				$("button").click(function(){
+					$("ul").append("<li>我是新增的li</li>")
+				})
+				//这里的理解是，通过事件冒泡，在新增的li找不到事件时，就去ul里找事件，也就是li委托的点击事件
+			})
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+		<button>新增一个li</button>
+	</body>
+</html>
