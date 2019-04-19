@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <script src="./js/jquery.js"></script> -->
+  <script src="./js/njQuery-1.0.0.js"></script>
+  <script>
+    $(function(){
+      /*
+        DOM操作:
+        1. empty ==> 清空指定元素中的所有内容
+        2. remove ==> 删除所有的元素或指定元素
+        
+        3. html ==> 设置所有元素的内容,获取第一个元素内容
+        4. text ==> 设置所有元素的文本内容,获取所有元素的文本内容
+
+        5. appendTo ==> 将元素添加到指定元素颞部的最后
+        6. append ==> 将元素添加到指定元素内部最后
+
+        7. prependTo ==> 将元素添加到指定元素内部的最前面
+        8. prepend ==> 将元素添加到指定元素内部的最前面
+
+        9. insertAfter ==> 将元素添加到指定元素外部的后面
+        10. after ==> 将元素添加到指定元素外部的后面
+        
+        11. insertBefore ==> 将元素添加到指定元素外部的前面
+        12. before ==> 将元素添加到指定元素外部的前面
+
+        13. replaceAll ==> 替换所有指定元素
+        14. replaceWith ==> 替换所有指定元素
+
+        15. clone ==> 复制节点(true 深复制 false 浅复制)
+      */
+      var btn = document.getElementsByTagName('button')[0];
+      btn.onclick = function(){
+        // $('div').empty()
+        // $('div').remove()
+        $('div').remove('.box')
+      }
+    })
+  
+  </script>
+</head>
+<body>
+  <button>调用empty</button>
+  <div>
+    我是div
+    <p>我是段落</p>
+  </div>
+  <div class="box">
+    我是div
+    <p>我是段落</p>
+  </div>
+   <p class="box"></p>
+</body>
+</html>

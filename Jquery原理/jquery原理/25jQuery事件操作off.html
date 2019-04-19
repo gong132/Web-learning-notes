@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <script src="./js/jquery.js"></script> -->
+  <script src="./js/njQuery-1.0.0.js"></script>
+  <style>
+    
+  
+  </style>
+  <script>
+    $(function(){
+      /*
+        1.on (type ,callback):注册事件
+        2.off(type,callback):移出事件  
+      */
+      function test1(){
+        console.log('hello click1')
+      }
+      function test2(){
+        console.log('hello click2')
+      }
+      function test3(){
+        console.log('hello mouseenter')
+      }
+      // var btn = document.getElementsByTagName('button')
+      
+      // btn.eventsCache = {
+      //   click:[test1,test2],
+      //   mouseenter:[test3]
+      // }
+      
+      $('button').on('click',test1);
+      $('button').on('click',test2);
+      $('button').on('mouseenter',test3)
+      
+      //1.不传参,会移除所有事件
+      // $('button').off()
+      // 2.传递一个参数,会移除对应类型的所有事件
+      // $('button').off('click')
+      // 3.传递两个参数,会移除对应类型的对应事件
+      // $('button').off('click',test1);
+      
+    })
+  </script>
+</head>
+<body>
+  <button>我是按钮1</button>
+  <button>我是按钮2</button>
+</body> 
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <script src="./js/jquery.js"></script> -->
+  <script src="./js/njQuery-1.0.0.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box1{
+      width: 100px;
+      height: 100px;
+      background: red;
+      margin-bottom: 10px;
+    }
+    .box2{
+      width: 200px;
+      height: 200px;
+      background: blue;
+      margin-bottom: 10px;
+    }
+  
+  </style>
+  <script>
+    $(function(){
+      /*
+        1.attr(): 设置或者获取元素的属性节点值
+        2.prop(): 设置或者获取元素的属性值
+        3.css(): 设置获取样式
+        4.val(): 获取设置value的值
+        5.hasClass(): 判断有没有指定类
+        6.addClass(): 给所有元素添加指定类或所有类
+        7.removeClass(): 清空所有元素指定类或所有类
+        8.toggleClass(): 有则删除,没有则添加      
+      */
+
+      //传递一个参数,返回第一个元素指定的样式
+      console.log($('div').css('height'))
+    
+      //传递两个参数,代表设置所有元素样式
+      // 并且返回值是方法的调用者
+      // console.log($('div').css('height','50px'));
+
+      // 传递一个对象,代表批量设置所有元素样式
+      $('div').css({
+        'height':'50px',
+        backgroundColor:'pink'
+      })
+
+      // 获取样式
+      // var div = document.querySelector('div')
+      // window.getComputedStyle(div)['heigth']
+      // console.log(window.getComputedStyle(div)["height"])
+      // console.log(div.currentStyle["height"])//ie8及以下
+
+      // 设置样式
+      // div.style["height"] = "300px"
+    })
+  </script>
+</head>
+<body>
+ <div class="box1">div1</div>
+ <div class="box2">div2</div>
+</body> 
+</html>

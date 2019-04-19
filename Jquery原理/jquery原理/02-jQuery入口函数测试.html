@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>02-jQuery入口函数测试</title>
+  <!-- <script src="./js/jquery.js"></script>
+   -->
+   <script src="./js/njQuery-1.0.0.js"></script>
+</head>
+<body>
+  <ul>
+    <li>ul中的li1</li>
+    <li>ul中的li2</li>
+    <li>ul中的li3</li>
+  </ul>
+  <script>
+    // 1.传入 '' null undefined等
+    // 会返回一个空的jq对象
+    console.log($())
+    console.log($(''))  
+    console.log($(null))  
+    console.log($(undefined))  
+    console.log($(NaN))  
+    console.log($(0))  
+    console.log($(false))  
+
+    // 2.传入html代码片段
+    // 会将创建好的dom对象存储到jq对象中返回
+    console.log($('  <p>1</p><p> 2</p><p>3</p>  '))
+
+    //3.传入选择器
+    // 将找到的所有元素存储到jq对象中返回
+    console.log($('li'))
+
+    // 4.传入数组
+    // 会将数组中存储的元素依次储存到jq对象中返回
+    console.log($([1,2,3,4]))
+
+    // 5.传入伪数组
+    // 会将数组中存储的元素依次储存到jq对象中返回
+    console.log($({0:'name',1:'age',length:2}))
+
+    // 6.传入对象
+    // 会将传入的对象存储到jq对象中返回
+    function Person(){};
+    console.log($(new Person()))
+
+    // 7.传入DOM元素
+    // 会将传入的对象存储到jq对象中返回 
+    console.log($(document.createElement('div')))
+
+    // 8.传入基本数据类型
+    // 会将传入的基本数据类型存储到jq对象中返回
+    console.log($(132))
+    console.log($(true))
+
+    // 9.传入一个function
+    console.log($(function a(){}))
+
+    // 1.传入 '' null undefined等 返回空字符串
+    // 2.字符串 :
+    //   代码片段:会将创建好的dom对象存储到jq对象中返回
+    //    选择器:将找到的所有元素存储到jq对象中返回
+    // 3.数组:
+    //  会将数组中存储的元素依次储存到jq对象中返回
+    // 4.其他类型:
+    //    会将传入的数据存储到jq对象中返回
+  </script>
+</body>
+</html>

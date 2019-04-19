@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/njQuery-1.0.0.js"></script>
+  <script>
+    $(function () {
+      var btn = document.getElementsByTagName('button')[0];
+      btn.onclick = function () {
+        /*
+          特点:
+          1.如果指定元素有多个,会将元素拷贝多份添加到指定元素中
+          2.给appendTo方法传递字符串,会根据字符串找到所有对应元素后再添加
+          3.给appendTo方法传递jQuery对象,会将元素添加到jQuery对象保存的所有元素中
+          4.给appendTo方法传递DOM元素,会将元素添加到所有指定DOM元素中
+        */
+        // 接收一个字符串
+        $("p").appendTo('.item')
+        // 接收一个jQuery对象
+        $("p").appendTo($('div'))
+        // 接收一个DOM元素
+        var divs = document.querySelectorAll('div')
+        $('p').appendTo(divs)
+
+        console.log($("p").appendTo('.item'))
+      }
+
+      function appendTo(source, target) {
+        // target.appendChild(source);
+        
+        //1. 遍历取出所有指定的元素
+        for (var i = 0; i < target.length; i++) {
+          var targetEle = target[i];
+          // 遍历取出所有的source
+          for (var j = 0; j < source.length; j++) {
+            var sourceEle = source[j]
+
+            // 判断当前是否是第0个target
+            if (i === 0) {
+              // 直接添加
+              targetEle.appendChild(sourceEle)
+            } else {
+              // 先拷贝再添加
+              var temp = sourceEle.cloneNode(true);
+              targetEle.appendChild(temp)
+            }
+          }
+
+        }
+      }
+      var p = document.querySelector('p');
+      var divs = document.querySelector('div');
+      appendTo(p, divs)
+
+
+    })
+  </script>
+</head>
+
+<body>
+  <button>调用appendTo</button>
+  <p>我是段落</p>
+  <div class="item">
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+  </div>
+</body>
+
+</html>

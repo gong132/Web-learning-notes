@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <script src="./js/jquery.js"></script> -->
+  <script src="./js/njQuery-1.0.0.js"></script>
+  <style>
+    
+  
+  </style>
+  <script>
+    $(function(){
+      /*
+        clone() 复制一个元素
+      */
+     $('ul li').on('click',function(){
+       alert('li')
+     })
+     $('button').eq(0).on('click',function(){
+      //  1.浅复制一个元素
+      var $li = $('li').clone(false);
+      console.log($li);
+      // 2.将复制的元素添加到ul中
+      $('ul').append($li)
+     })
+     $('button').eq(1).on('click',function(){
+      //  1.浅复制一个元素
+      var $li = $('li').clone(true);
+      console.log($li);
+      // 2.将复制的元素添加到ul中
+      $('ul').append($li)
+     })
+      
+    })
+  </script>
+</head>
+<body>
+  <button>浅复制节点</button>
+  <button>深复制节点</button>
+  <ul>
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+  </ul>
+</body> 
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+
+      function addCookie(key, value, day, path, domain) {
+        // 1.处理默认 保存的路径
+        // if(!path) {
+        //   var index = window.location.pathname.lastIndexOf('/');
+        //   var currentPath = window.location.pathname.slice(0, index)
+        //   path = currentPath;
+        // }
+        var index = window.location.pathname.lastIndexOf('/');
+        var currentPath = window.location.pathname.slice(0, index)
+        path = path || currentPath
+
+        // 2.处理默认 保存的domain
+        domain = domain || document.domain
+
+        // 3.处理默认过期时间
+        if (!day) {
+          document.cookie = key + "=" + value + ";path=" + path + ";domain=" + domain + ";"
+        } else {
+          var date = new Date()
+          date.setDate(date.getDate() + day)
+          document.cookie = key + "=" + value + ";expires="+date.toGMTString()+";path=" + path + ";domain=" + domain + ";"
+        }
+      }
+
+      function getCookie(key){
+        var res = document.cookie.split(';')
+        for(var i=0;i<res.length; i ++){
+          var temp = res[i].split("=")
+          if(temp[0].trim() === key){
+            return temp[1]
+          }
+        }
+      }
+      
+      function removeCookie(key){
+        var res = document.cookie.split(';')
+        for(var i=0;i<res.length; i ++){
+          var temp = res[i].split("=")
+          if(temp[0].trim() === key){
+            // return temp[1]
+            res.splice(i,1)
+            // console.log(res)
+            // console.log(res[i])
+          }
+        }
+      }
+      
+      function delCookie(key){
+        addCookie(key,getCookie(key),-1)
+      }
+      // console.log(window.location.pathname);
+      // var index = window.location.pathname.lastIndexOf('/');
+      // var currentPath = window.location.pathname.slice(0, index)
+      // console.log(currentPath)
+      addCookie("gender","male")
+      getCookie("gender")
+      // console.log(getCookie("gender"))
+      // removeCookie("name")
+      delCookie("name")
+      console.log(document.domain)
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
